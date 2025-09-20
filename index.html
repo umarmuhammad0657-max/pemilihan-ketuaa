@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pemilihan Ketua Pelajar</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Pemilihan Ketua Pelajar 🎓</h1>
+    <p class="sub">Daftar calon, undi, dan lihat keputusan secara live.</p>
+  </header>
+
+  <!-- DAFTAR CALON -->
+  <section class="card" id="daftar">
+    <h2>Daftar Calon</h2>
+    <form id="formAddCandidate">
+      <input id="candidateName" type="text" placeholder="Nama calon (contoh: Ali)" required />
+      <button type="submit">Daftar Calon</button>
+    </form>
+    <ul id="candidateList" class="list"></ul>
+  </section>
+
+  <!-- UNDI -->
+  <section class="card" id="undi">
+    <h2>Undi</h2>
+    <form id="formVote">
+      <input id="voterName" type="text" placeholder="Nama pengundi (contoh: Siti)" required />
+      <select id="candidateSelect"></select>
+      <button type="submit">Undi</button>
+    </form>
+    <p class="note">Sistem ini guna penyimpanan dalam komputer (browser). Satu nama = satu undi.</p>
+  </section>
+
+  <!-- KEPUTUSAN -->
+  <section class="card" id="keputusan">
+    <h2>Keputusan Undian</h2>
+    <div class="chart-wrap">
+      <canvas id="resultChart"></canvas>
+    </div>
+    <div id="summary" class="summary"></div>
+    <ul id="resultList" class="list"></ul>
+    <button id="resetBtn" class="danger">Padam Semua Data (Guru)</button>
+  </section>
+
+  <!-- Chart.js CDN (perlu internet sekali sahaja) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
